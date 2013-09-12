@@ -43,25 +43,25 @@ public class RefreshWebscriptsMojo extends AbstractMojo {
   /**
    * The URL to send the POST to.
    */
-  @Parameter(property = "url", required = true)
+  @Parameter(property = "url", required = true, alias = "url")
   private URL _url;
 
   /**
    * The username to authenticate the call for.
    */
-  @Parameter(property = "username", defaultValue = DEFAULT_USERNAME)
+  @Parameter(property = "username", defaultValue = DEFAULT_USERNAME, alias = "username")
   private String _username = DEFAULT_USERNAME;
 
   /**
    * The password to authenticate the call for.
    */
-  @Parameter(property = "password", defaultValue = DEFAULT_PASSWORD)
+  @Parameter(property = "password", defaultValue = DEFAULT_PASSWORD, alias = "password")
   private String _password = DEFAULT_PASSWORD;
 
   /**
    * The method used for refresh, different for share and repo?
    */
-  @Parameter(property = "method", defaultValue = "post")
+  @Parameter(property = "method", defaultValue = "post", alias = "method")
   private String _method = DEFAULT_METHOD;
 
   @Override
@@ -159,7 +159,7 @@ public class RefreshWebscriptsMojo extends AbstractMojo {
   }
 
   public void setUrl(URL url) {
-    _url = url;
+    this._url = url;
   }
 
 }
