@@ -43,7 +43,7 @@ public class RefreshWebscriptsMojo extends AbstractMojo {
   /**
    * The URL to send the POST to.
    */
-  @Parameter(property = "url")
+  @Parameter(property = "url", required = true)
   private URL _url;
 
   /**
