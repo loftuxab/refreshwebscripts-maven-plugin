@@ -31,13 +31,6 @@
   <build>
     <plugins>
       <plugin>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <version>2.7</version>
-        <configuration>
-          <altDeploymentRepository>internal.repo::default::file://${project.build.directory}/mvn-repo</altDeploymentRepository>
-        </configuration>
-      </plugin>
-      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>3.1</version>
@@ -45,37 +38,6 @@
           <source>1.6</source>
           <target>1.6</target>
         </configuration>
-      </plugin>
-      <plugin>
-        <groupId>com.github.github</groupId>
-        <artifactId>site-maven-plugin</artifactId>
-        <version>0.8</version>
-        <configuration>
-          <!-- git commit message -->
-          <message>Maven artifacts for ${project.version}</message>
-          <!-- disable webpage processing -->
-          <noJekyll>true</noJekyll>
-          <!-- matches distribution management repository url above -->
-          <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
-          <!-- remote branch name -->
-          <branch>refs/heads/mvn-repo</branch>
-          <includes>
-            <include>**/*</include>
-          </includes>
-          <!-- github repo name -->
-          <repositoryName>refreshwebscripts-maven-plugin</repositoryName>
-          <!-- github username -->
-          <repositoryOwner>oakman</repositoryOwner>
-        </configuration>
-        <executions>
-          <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
-          <execution>
-            <goals>
-              <goal>site</goal>
-            </goals>
-            <phase>deploy</phase>
-          </execution>
-        </executions>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -157,10 +119,13 @@
 
   <distributionManagement>
     <repository>
-      <id>github</id>
-      <name>GitHub ${project.artifactId} Repository</name>
-      <url>https://raw.github.com/oakman/${project.artifactId}/mvn-repo</url>
+      <id>redpill-linpro-releases</id>
+      <url>http://maven.redpill-linpro.com/nexus/content/repositories/releases</url>
     </repository>
+    <snapshotRepository>
+      <id>redpill-linpro-snapshots</id>
+      <url>http://maven.redpill-linpro.com/nexus/content/repositories/snapshots</url>
+    </snapshotRepository>
   </distributionManagement>
 
 </project>
