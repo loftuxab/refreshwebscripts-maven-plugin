@@ -21,7 +21,7 @@ To use it, two things has to be done in the Maven POM file.
 <plugin>
   <groupId>org.redpill-linpro.alfresco</groupId>
   <artifactId>refreshwebscripts-maven-plugin</artifactId>
-  <version>1.0.0</version>
+  <version>1.0.1</version>
   <executions>
     <execution>
       <goals>

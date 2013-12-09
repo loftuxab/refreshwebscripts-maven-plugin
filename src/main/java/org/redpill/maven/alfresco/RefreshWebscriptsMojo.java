@@ -1,7 +1,6 @@
 package org.redpill.maven.alfresco;
 
 import java.io.Closeable;
-import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -153,7 +152,7 @@ public class RefreshWebscriptsMojo extends AbstractMojo {
   private void closeQuietly(Closeable closeable) {
     try {
       closeable.close();
-    } catch (IOException ex) {
+    } catch (Exception ex) {
       // swallow any exceptions
     }
   }
