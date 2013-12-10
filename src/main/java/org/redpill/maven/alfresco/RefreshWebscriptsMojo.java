@@ -130,7 +130,7 @@ public class RefreshWebscriptsMojo extends AbstractMojo {
 
       getLog().info("URL '" + _url.toExternalForm() + "' called with response code: '" + statusCode + "' and reason phrase '" + reasonPhrase + "'");
     } catch (Exception ex) {
-      throw new RuntimeException(ex);
+      getLog().error("Can't contact " + _url.getHost() + " on port " + _url.getPort() + ", exiting...");
     } finally {
       closeQuietly(response);
       closeQuietly(client);

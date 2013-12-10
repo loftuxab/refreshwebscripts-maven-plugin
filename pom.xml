@@ -9,8 +9,6 @@
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <!-- github server corresponds to entry in ~/.m2/settings.xml -->
-    <github.global.server>github</github.global.server>
   </properties>
 
   <organization>
@@ -116,6 +114,17 @@
       <version>3.3</version>
     </dependency>
   </dependencies>
+
+  <repositories>
+    <repository>
+      <id>redpill-linpro</id>
+      <url>http://maven.redpill-linpro.com/nexus/content/groups/public</url>
+      <snapshots>
+        <enabled>true</enabled>
+        <updatePolicy>daily</updatePolicy>
+      </snapshots>
+    </repository>
+  </repositories>
 
   <distributionManagement>
     <repository>
